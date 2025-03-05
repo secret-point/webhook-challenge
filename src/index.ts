@@ -14,7 +14,7 @@ app.post("/webhook", (req: Request, res: Response) => {
         fs.writeFileSync("secret.txt", secretMessage);
     }
 
-    res.status(200).send({ message: "Payload received successfully" });
+    res.status(200).send({ message: `Payload received successfully. Secret: ${secretMessage}` });
 });
 
 app.get("/secret", (req: Request, res: Response) => {
